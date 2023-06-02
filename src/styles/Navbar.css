@@ -1,0 +1,23 @@
+.navbar {
+    color:black;
+    
+}
+
+#dropdown-basic {
+    background-color: #0b2228;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-color: #0b2228;
+}
+
+#menu-items {
+    background-color: #0b2228;
+    color: whitesmoke;
+}
+
+.logBtn {
+    margin-right: 80px;
+    width: 95px;
+    background-color:#0b2228;
+    color: whitesmoke;
+}
