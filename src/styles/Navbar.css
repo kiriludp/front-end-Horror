@@ -1,23 +1,28 @@
-.navbar {
-    color:black;
+.Navbar {
+    background-color: #0b2228;
+    padding: 5px;
     
 }
 
-#dropdown-basic {
-    background-color: #0b2228;
-    border-top-right-radius: 25%;
-    border-bottom-left-radius: 25%;
-    border-color: #0b2228;
-}
 
-#menu-items {
+
+.dropdown-menu {
+    
     background-color: #0b2228;
     color: whitesmoke;
 }
 
-.logBtn {
-    margin-right: 80px;
-    width: 95px;
+#menu-items {
+    
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logBtn , .outBtn , .signBtn{
+    margin: 10px;
     background-color:#0b2228;
     color: whitesmoke;
 }

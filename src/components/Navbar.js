@@ -7,17 +7,11 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
-    const style ={
-      display: 'block',
-      width: 700,
-      padding: 30
-    }
-
   return (
-    <nav className='Navbar' style= {style}>
+    <nav className='Navbar'>
       <div className="navigating">
         <Dropdown>
-            <Dropdown.Toggle>
+            <Dropdown.Toggle className="Menu">
               Menu
             </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -27,8 +21,11 @@ export default function Navbar() {
           </Dropdown.Menu>
         </Dropdown>
 
-      <button>Login</button>
-      <button>Logout</button>
+    <div className="button">
+      <button className="logBtn"><Link to="/Login">Login</Link></button>
+      <button className="outBtn"><Link to ="/">Logout</Link></button>
+      <button className="signBtn"><Link to ="/Signup">SignUp</Link></button>
+      </div>
         </div>
 </nav>
   );
