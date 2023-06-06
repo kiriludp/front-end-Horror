@@ -5,34 +5,12 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Profile from './components/Profile';
-import Login from './components/AuthForm';
+import AuthForm from './components/AuthForm';
 import NewGame from './components/NewGame';
-import API from "./utils/API"
+/* import API from "./utils/API" */
 
 export default function App() {
-  const [userId, setUserId] = useState(-1);
-  const [username, setUsername] =useState("")
-  const [token, setToken] = useState("")
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    API.verifyToken(storedToken).then(data=> {
-      setToken(storedToken);
-      setUserId(data.id);
-      setUsername(data.username);
-    }).catch(err => {
-      console.log("WRONG TURN")
-      console.log(err)
-      logout();
-    })
-  }, [])
-
-  const logout= () => {
-    localStorage.removeItem("token")
-    setToken(null);
-      setUserId(0);
-      setUsername(null);
-  }
+ 
   
   return (
     <div className='Main'>
@@ -43,7 +21,8 @@ export default function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/NewGame" element={<NewGame />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Login" element={<Login type="Login" />} />
+          <Route path="/Login" element={<AuthForm type="Login" />} />
+          <Route path="/Signup" element={<AuthForm type="Signup" />} />
          
 
         </Routes>
