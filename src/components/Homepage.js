@@ -1,31 +1,26 @@
+import { Link } from "react-router-dom";
 
 
-function Homepage() {
+
+export default function Homepage() {
     return (
-    <div>
-        <div className="startContainer">
-            <div className="card location">
-                <div className="card-header">
-                    <h2 className='localName'>You find yourself inside a tent in the middle of the woods.</h2>
-                    <div className="storyBody">
-                        <p>Here will be the story text :D </p>
-                    </div>
-                </div>
-            </div>    
+        <div className="main">
+        <div className="storyIntro">
+            <h3>You find yourself in a tent in the middle of the woods...</h3>
+            <p className= "storyDetails"> You wake up out of a deep sleep with a start, a chill down your spine. You’re not sure what it was that woke you up, but whatever it was has left you unsettled. Sitting up in your sleeping bag, you look around to notice your friend missing from beside you. 
+                <br></br>
+            <i>‘They must have gotten up to use the bathroom…’</i>
+            <br></br>
+            Your heart is pounding in your chest like you’ve been running. You tell yourself it must have been a nightmare, even though you can’t remember anything. It can’t be that uncommon to get nightmares out in the woods while camping right? It must happen to people all the time… 
+</p>
+        </div>
+        <div className="start">
+            <Link className='Homepage-link' to = '/NewGame'>
+                Begin your adventure...
+            </Link>
         </div>
         
-        <div className="startContainer">
-            <div className="card location">
-                <div className="card-header">
-                    <h2 className="localName">You are starting in the sitting room of an old cabin.</h2>
-                    <div className="storyBody">
-                        <p>Here is the story text of the other option</p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-    )
+        
+)
 }
-
-export default Homepage

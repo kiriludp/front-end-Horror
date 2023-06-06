@@ -1,18 +1,32 @@
-import React from 'react';
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Homepage from "./components/Homepage";
+import {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+/* import "./styles/App.css"; */
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Homepage from './components/Homepage';
+import Profile from './components/Profile';
+import AuthForm from './components/AuthForm';
+import NewGame from './components/NewGame';
+/* import API from "./utils/API" */
 
-
-
-function App() {
+export default function App() {
+ 
+  
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <Homepage />
-    </div>
-  );
-}
+    <div className='Main'>
+      <Router>
+        <Header />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/NewGame" element={<NewGame />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Login" element={<AuthForm type="Login" />} />
+          <Route path="/Signup" element={<AuthForm type="Signup" />} />
+         
 
-export default App;
+        </Routes>
+      </Router>
+    </div>
+  )
+  }

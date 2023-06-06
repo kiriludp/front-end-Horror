@@ -1,30 +1,32 @@
-import React from 'react';
-import '../styles/Navbar.css';
+import React from "react";
+import "../styles/Navbar.css";
+import 'bootstrap/dist/css/bootstrap.css'
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
-function Navbar() {
-    const styles = {
-        background: '#6D6161'
-    }
+
+export default function Navbar() {
+
   return (
-    <nav className= 'navbar' style= {styles}>
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Menu
-      </Dropdown.Toggle>
+    <nav className='Navbar'>
+      <div className="navigating">
+        <Dropdown>
+            <Dropdown.Toggle className="Menu">
+              Menu
+            </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item><Link to="/">Homepage</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/NewGame">New Game</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/Profile">Profile</Link></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
-      <Dropdown.Menu id='menu-items'>
-        <Dropdown.Item href="./">Homepage</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">High Scores</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Profile</Dropdown.Item>
-
-      </Dropdown.Menu>
-    </Dropdown>
-
-    <button class="logBtn" id='login'>Login</button>
-    <button class="logBtn" id='logout'>Logout</button>
-    </nav>
+    <div className="button">
+      <button className="logBtn"><Link to="/Login">Login</Link></button>
+      <button className="outBtn"><Link to ="/">Logout</Link></button>
+      <button className="signBtn"><Link to ="/Signup">SignUp</Link></button>
+      </div>
+        </div>
+</nav>
   );
 }
-
-export default Navbar;
