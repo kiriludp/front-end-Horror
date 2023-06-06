@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../styles/Homepage.css'
 
 
 
@@ -16,7 +17,7 @@ export default function Homepage() {
         </div>
         <div className="start">
             <Link className='Homepage-link' to = '/NewGame'>
-                Begin your adventure...
+               <button className="startBtn"> Begin your adventure...</button>
             </Link>
         </div>
         
