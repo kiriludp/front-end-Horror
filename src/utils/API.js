@@ -1,11 +1,11 @@
 //for local development
 // const URL_PREFIX = "http://localhost:3001";
 //deployed
-const URL_PREFIX = "https://coolors-back.herokuapp.com";
+const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   login: (userObj) => {
-    return fetch(`${URL_PREFIX}/api/users/login`, {
+    return fetch(`${URL_PREFIX}/login`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -20,7 +20,7 @@ const API = {
     });
   },
   signup: (userObj) => {
-    return fetch(`${URL_PREFIX}/api/users`, {
+    return fetch(`${URL_PREFIX}/Signup`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -35,7 +35,7 @@ const API = {
     });
   },
   verifyToken:(token)=>{
-    return fetch(`${URL_PREFIX}/api/users/verifytoken`,{
+    return fetch(`${URL_PREFIX}/verifytoken`,{
         headers:{
             "authorization":`Bearer ${token}`
         }
