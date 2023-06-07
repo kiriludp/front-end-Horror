@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Profile from './components/Profile';
 import AuthForm from './components/AuthForm';
-import NewGame from './components/NewGame';
+import Start from './components/Start';
 /* import API from "./utils/API" */
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/NewGame" element={<NewGame />} />
+          <Route path="/Start" element={<Start />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Login" element={<AuthForm type="Login" />} />
           <Route path="/Signup" element={<AuthForm type="Signup" />} />

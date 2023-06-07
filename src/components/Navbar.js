@@ -16,7 +16,7 @@ export default function Navbar() {
             </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item><Link to="/">Homepage</Link></Dropdown.Item>
-            <Dropdown.Item><Link to="/NewGame">New Game</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/Start">Start</Link></Dropdown.Item>
             <Dropdown.Item><Link to="/Profile">Profile</Link></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
