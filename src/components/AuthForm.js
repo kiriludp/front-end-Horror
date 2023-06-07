@@ -1,96 +1,94 @@
-import React, {useState} from 'react'
-/* import { useNavigate } from "react-router-dom"; */
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../utils/API";
-/* import "./style.css"; */
+
 
 export default function AuthForm(props) {
-  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // email is an example of signup only field, not in use for this app
+  const [email, setEmail] = useState("");
 
- /*  useEffect(() => {
+  useEffect(() => {
     if (props.userId > 0) {
-      (`/homepage`);
+      navigate(`/Profile/${props.username}`);
     }
-  }, [props.userId]); */
+  }, [props.userId]);
   const handleChange = (e) => {
     if (e.target.name === "username") {
       setUsername(e.target.value);
+      // email is an example of signup only field, not in use for this app
     } else if (e.target.name === "email") {
       setEmail(e.target.value);
     } else {
       setPassword(e.target.value);
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (props.type === "Login") {
+    if (props.usage === "Login") {
       API.login({
         username: username,
         password: password,
       })
-      .then((data) => {
-        console.log(data);
-        console.log("testing");
-        props.setUserId(data.user.id);
-        props.setUsername(data.user.username);
-        props.setToken(data.token);
-        localStorage.setItem("token", data.token);
-      })
-      .catch((err)=> {
-        console.log(err);
-        localStorage.removeItem("token");
-      });
+        .then((data) => {
+          console.log(data);
+          props.setUserId(data.user.id);
+          props.setUsername(data.user.username);
+          props.setToken(data.token);
+          localStorage.setItem("token", data.token);
+        })
+        .catch((err) => {
+          console.log(err);
+          localStorage.removeItem("token");
+        });
     } else {
       API.signup({
-        email:email,
-        username:username,
-        password:password,
+        username: username,
+        password: password,
       })
-      .then((data) => {
-        console.log(data);
-        console.log("testing");
-        props.setUserId(data.user.id);
-        props.setEmail(data.email);
-        props.setUsername(data.user.username);
-        props.setToken(data.token);
-        localStorage.setItem("token", data.token);
-      })
-      .catch((err)=> {
-        console.log(err);
-        localStorage.removeItem("token");
-      });
-  }
-};
-  return(
+        .then((data) => {
+          console.log(data);
+          props.setUserId(data.user.id);
+          props.setUsername(data.user.username);
+          props.setToken(data.token);
+          localStorage.setItem("token", data.token);
+        })
+        .catch((err) => {
+          console.log(err);
+          localStorage.removeItem("token");
+        });
+    }
+  };
+  return (
     <main className="AuthForm">
-      <div>
-        <h1>{props.type}</h1>
-        <form onSubmit={handleSubmit}>
-        {props.type==="Signup"&&
-          <input
-          name="email"
-          onChange={handleChange}
-          value={email}
-          placeholder="email"
-          />}
-          <input
-          name="username"
-          onChange={handleChange}
-          value={username}
-          placeholder="username"
-          />
-          <input
-          name="password"
-          onChange={handleChange}
-          value={password}
-          type="password"
-          />
-        
-        <button>{props.type}</button>
-        </form>
-      </div>
+      {props.userId === -1 ? (
+        <h1>Loading....</h1>
+      ) : (
+        <div>
+          <h1>{props.usage}</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              name="username"
+              onChange={handleChange}
+              value={username}
+              placeholder="username"
+            />
+            <input
+              name="password"
+              onChange={handleChange}
+              value={password}
+              type="password"
+            />
+            {/* if i need additional form fields for signup: */}
+            {/* // email is an example of signup only field, not in use for this app */}
+            {/* {props.usage==="Signup"&& <input name="email" onChange={handleChange} placeholder="email" value={email}/>} */}
+            {/* {props.usage==="Signup"?<input placeholder='signup only'/> :null} */}
+            <button>{props.usage}</button>
+          </form>
+        </div>
+      )}
     </main>
   );
 }
