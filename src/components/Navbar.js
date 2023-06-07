@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
 
   return (
     <nav className='Navbar'>
@@ -16,7 +16,7 @@ export default function Navbar() {
             </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item><Link to="/">Homepage</Link></Dropdown.Item>
-            <Dropdown.Item><Link to="/Start">Start</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/Start">Start Game</Link></Dropdown.Item>
             <Dropdown.Item><Link to="/Profile">Profile</Link></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

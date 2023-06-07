@@ -39,7 +39,7 @@ const texts = [
         id: 3,
         text: `You start towards the noise. The deeper you go, the harder it is to navigate around fallen branches and roots. You’re shuffling through big piles of decaying leaves and the smell is almost overwhelming. Did your friend really come all the way out here just to use the bathroom? 
             
-       <b> SNAP </b>
+        SNAP
         
         You jump and spin in the direction of the sound that still echos through the woods. Your mouth is feeling dry. You’re breathing hard. This is starting to feel like maybe it’s a bad idea…
         `,
