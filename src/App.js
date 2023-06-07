@@ -6,11 +6,36 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Profile from './components/Profile';
 import AuthForm from './components/AuthForm';
-import NewGame from './components/NewGame';
-/* import API from "./utils/API" */
+import Start from './components/Start';
+import API from "./utils/API";
+
 
 export default function App() {
+
+  const [userId, setUserId] = useState(-1);
+  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
+  const [token, setToken] = useState("")
  
+  useEffect(()=>{
+    const storedToken = localStorage.getItem("token");
+    API.verifyToken(storedToken).then(data=>{
+      setToken(storedToken);
+      setUserId(data.id);
+      setUsername(data.username);
+    }).catch(err=>{
+      console.log("oh noes")
+      console.log(err)
+     logout();
+    })
+  },[])
+
+  const logout = ()=>{
+    localStorage.removeItem("token")
+      setToken(null);
+      setUsername(null);
+      setUserId(0);
+  }
   
   return (
     <div className='Main'>
@@ -18,12 +43,11 @@ export default function App() {
         <Header />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/NewGame" element={<NewGame />} />
+          <Route path="/" element={<Homepage userId={userId} token={token} />} />
+          <Route path="/Login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} />} />
+          <Route path="/Signup" element={<AuthForm usage="Signup" setUserId={setUserId} setEmail={setEmail} setUsername={setUsername} setToken={setToken} userId={userId} email={email} username={username} />} />
+          <Route path="/Start" element={<Start />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Login" element={<AuthForm type="Login" />} />
-          <Route path="/Signup" element={<AuthForm type="Signup" />} />
-         
 
         </Routes>
       </Router>

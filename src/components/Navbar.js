@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
 
   return (
     <nav className='Navbar'>
@@ -16,14 +16,14 @@ export default function Navbar() {
             </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item><Link to="/">Homepage</Link></Dropdown.Item>
-            <Dropdown.Item><Link to="/NewGame">New Game</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/Start">Start Game</Link></Dropdown.Item>
             <Dropdown.Item><Link to="/Profile">Profile</Link></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
 
     <div className="button">
       <button className="logBtn"><Link to="/Login">Login</Link></button>
-      <button className="outBtn"><Link to ="/">Logout</Link></button>
+      <button className="signBtn" onClick={props.logout}>Logout</button>:null}
       <button className="signBtn"><Link to ="/Signup">SignUp</Link></button>
       </div>
         </div>
