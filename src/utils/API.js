@@ -1,11 +1,11 @@
 //for local development
 // const URL_PREFIX = "http://localhost:3001";
 //deployed
-const URL_PREFIX = "http://localhost:3001";
+const URL_PREFIX = "http://localhost:3000";
 
 const API = {
   login: (userObj) => {
-    return fetch(`${URL_PREFIX}/login`, {
+    return fetch(`${URL_PREFIX}/api/users/login`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -15,12 +15,12 @@ const API = {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("falied login");
+        throw new Error("failed login");
       }
     });
   },
   signup: (userObj) => {
-    return fetch(`${URL_PREFIX}/Signup`, {
+    return fetch(`${URL_PREFIX}/api/users/signup`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -30,7 +30,7 @@ const API = {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("falied signup");
+        throw new Error("failed signup");
       }
     });
   },
