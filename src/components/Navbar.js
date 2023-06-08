@@ -22,9 +22,9 @@ export default function Navbar(props) {
         </Dropdown>
 
     <div className="button">
-      <button className="logBtn"><Link to="/Login">Login</Link></button>
-      <button className="signBtn" onClick={props.logout}>Logout</button>:null}
-      <button className="signBtn"><Link to ="/Signup">SignUp</Link></button>
+    <button className="logBtn"><Link to="/login">Login</Link></button>
+      {props.userId>0?<button onClick={props.logout}>Logout</button>:null}
+      <button className="signBtn"><Link to ="/signup">SignUp</Link></button>
       </div>
         </div>
 </nav>

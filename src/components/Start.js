@@ -4,7 +4,8 @@ import texts from "../utils/texts";
 
 
 
-export default function NewGame () {
+
+export default function Start () {
     const [option, setOption] = useState(texts[0].id);
 
     useEffect (() => {
@@ -14,7 +15,8 @@ export default function NewGame () {
         const components = texts.map((text) => {
 
         return (
-        <div className="narText">
+            
+        <div className="text">
             <Structure
             key={text.id}
             text={text.text}
@@ -27,6 +29,6 @@ export default function NewGame () {
 
         </div>
          );
-    })
-    return <div className="NewGame-container">{components[option - 1]}</div>;
+    });
+     return <div className="start-container">{components[option - 1]}</div>;
 }

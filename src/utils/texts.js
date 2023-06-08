@@ -243,6 +243,17 @@ const texts = [
         “What the hell are you doing all the way out here?”
         `,
 
+        options: [
+            {
+                text: `THE`,
+                nextText: `()`
+            },
+            {
+                text: `END`,
+                nextText: `()`
+            },
+        ]
+
 
     },
     {
@@ -272,6 +283,17 @@ const texts = [
         
         
         --END--`,
+
+        options: [
+            {
+                text: `THE`,
+                nextText: `()`
+            },
+            {
+                text: `END`,
+                nextText: `()`
+            },
+        ]
     },
     {
         id: 16,
@@ -316,6 +338,16 @@ const texts = [
         The killer cuts off your bare hands. And then stabs you.
         
         ---END---`,
+        options: [
+            {
+                text: `THE`,
+                nextText: `()`
+            },
+            {
+                text: `END`,
+                nextText: `()`
+            },
+        ]
     },
     {
         id: 20,
@@ -324,6 +356,17 @@ const texts = [
         Honestly? You're a little impressed. Before you drop dead.
         
         ---END---`,
+
+        options: [
+            {
+                text: `THE`,
+                nextText: `()`
+            },
+            {
+                text: `END`,
+                nextText: `()`
+            },
+        ]
     },
     {
         id: 21,
@@ -334,6 +377,17 @@ const texts = [
         Pain. Just. All encompassing Pain. You've fallen into a pit trap and now there are wooden stakes sticking out of your body from various places. Booo.
         
         ---END---`,
+
+        options: [
+            {
+                text: `THE`,
+                nextText: `()`
+            },
+            {
+                text: `END`,
+                nextText: `()`
+            },
+        ]
     },
     {
         id: 22,

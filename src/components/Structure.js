@@ -1,10 +1,11 @@
-
 import {useState} from 'react';
+import Header from "./Header"
+
 
 
 
 export default function Structure({
-    text, /*We are describing whassa going on */
+    texts, /*We are describing whassa going on */
     btnOne, /*One of our options */
     btnTwo, /*Second option */
     setOption, /*Will allow for different branches moving forward */
@@ -17,8 +18,9 @@ export default function Structure({
         setMenuToggle(!menuToggle);
     };
     return (
+
         <div className='Structure-container'>
-            {menuToggle}
+            {menuToggle && <Header />}
         <div className= "menu">
             <label className='Structure-menuBtn'>
                 <input
@@ -29,10 +31,10 @@ export default function Structure({
              </label>
              </div>
         <div className="text">
-          <p className="Structure-text"> {text} </p>
+          <p className="Structure-text"> {texts} </p>
         </div>
         <div className="Structure-options">
-            <p>I am not sure what is going here yet</p>
+            <p></p>
         </div>
 
         <div className='Structure-buttons'>

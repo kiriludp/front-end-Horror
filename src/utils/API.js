@@ -1,7 +1,7 @@
 //for local development
 // const URL_PREFIX = "http://localhost:3001";
 //deployed
-const URL_PREFIX = "https://coolors-back.herokuapp.com";
+const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   login: (userObj) => {
@@ -20,7 +20,7 @@ const API = {
     });
   },
   signup: (userObj) => {
-    return fetch(`${URL_PREFIX}/api/users`, {
+    return fetch(`${URL_PREFIX}/api/users/signup`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -47,12 +47,15 @@ const API = {
         }
       });
   },
-  
-  };
-  
-export default API;
-    
+  getUserByName:(username)=>{
+    return fetch(`${URL_PREFIX}/api/users/byname/${username}`).then(res=>{
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("falied to fetch user " + username);
+      }
+    })
+  }
 
-
-
-        
+};
+ export default API
