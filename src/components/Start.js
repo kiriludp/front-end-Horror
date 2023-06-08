@@ -16,13 +16,13 @@ export default function NewGame () {
         return (
         <div className="narText">
             <Structure
-            key={text.id}
-            text={text.text}
-            btnOne={text.options[0].text}
-            btnTwo= {text.options[1].text}
+            /* key={texts.id} */
+            text={texts[0].text}
+            btnOne={texts[0].options[0].text}
+            btnTwo= {texts[0].options[1].text}
             setOption= {setOption}
-            idOne={text.options[0].nextText}
-            idTwo={text.options[1].nextText}
+            idOne={texts[0].options[0].nextText}
+            idTwo={texts[0].options[1].nextText}
            /> 
 
         </div>

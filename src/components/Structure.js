@@ -31,9 +31,9 @@ export default function Structure({
         <div className="text">
           <p className="Structure-text"> {text} </p>
         </div>
-        <div className="Structure-options">
+{/*         <div className="Structure-options">
             <p>I am not sure what is going here yet</p>
-        </div>
+        </div> */}
 
         <div className='Structure-buttons'>
             <button
