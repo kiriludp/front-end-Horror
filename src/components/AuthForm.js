@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../utils/API";
 
@@ -8,7 +8,7 @@ export default function AuthForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // email is an example of signup only field, not in use for this app
-  const [email, setEmail] = useState("");
+  const [setEmail] = useState("");
 
   useEffect(() => {
     if (props.userId > 0) {
@@ -38,6 +38,7 @@ export default function AuthForm(props) {
           props.setUsername(data.user.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
+          // document.querySelector(".logBtn").style="display: none;"
         })
         .catch((err) => {
           console.log(err);
