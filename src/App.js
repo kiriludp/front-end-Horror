@@ -42,16 +42,15 @@ const logout = ()=>{
     <div className='Main'>
       <Router>
         <Header />
-        <Navbar />
+        <Navbar userId={userId} username={username} logout={logout} />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage userId={userId} token={token} />} />
+          <Route path="/login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
+          <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } /> 
           <Route path="/start" element={<GameStart />} />
           <Route path="/game" element={<GamePlay />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
-          <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
+          <Route path="//user/:username" element={<Profile userId={userId} token={token} />} />
           
-
         </Routes>
       </Router>
       
