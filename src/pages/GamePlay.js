@@ -1,10 +1,10 @@
 import { useState, useEffect} from 'react';
-import Structure from "./Structure";
+import Structure from "../components/MainGame";
 import texts from "../utils/texts";
 
 
 
-export default function NewGame () {
+export default function Game () {
     const [option, setOption] = useState(texts[0].id);
 
     useEffect (() => {
@@ -14,7 +14,7 @@ export default function NewGame () {
         const components = texts.map((text) => {
 
         return (
-        <div className="narText">
+        <div className="choices">
             <Structure
             key={text.id}
             text={text.text}
@@ -28,5 +28,5 @@ export default function NewGame () {
         </div>
          );
     })
-    return <div className="NewGame-container">{components[option - 1]}</div>;
+    return <div className="gameContainer">{components[option - 1]}</div>;
 }

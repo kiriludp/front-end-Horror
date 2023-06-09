@@ -12,7 +12,7 @@ export default function AuthForm(props) {
 
   useEffect(() => {
     if (props.userId > 0) {
-      navigate(`/Profile/${props.username}`);
+      navigate(`/profile/${props.username}`);
     }
   }, [props.userId]);
   const handleChange = (e) => {
@@ -38,6 +38,7 @@ export default function AuthForm(props) {
           props.setUsername(data.user.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
+          // document.querySelector(".logBtn").style="display: none;"
         })
         .catch((err) => {
           console.log(err);
@@ -45,12 +46,14 @@ export default function AuthForm(props) {
         });
     } else {
       API.signup({
+        email:email,
         username: username,
         password: password,
       })
         .then((data) => {
           console.log(data);
           props.setUserId(data.user.id);
+          props.setEmail(data.user.email);
           props.setUsername(data.user.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
@@ -69,6 +72,13 @@ export default function AuthForm(props) {
         <div>
           <h1>{props.usage}</h1>
           <form onSubmit={handleSubmit}>
+          {props.usage==="Signup"&&
+          <input
+                name="email"
+                onChange={handleChange}
+                value={email}
+                placeholder="email"
+            />}
             <input
               name="username"
               onChange={handleChange}
