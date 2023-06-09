@@ -1,4 +1,4 @@
-const URL_PREFIX = "https://horrorgame.herokuapp.com/";
+const URL_PREFIX = "https://horrorgame.herokuapp.com";
 
 const API = {
   login: (userObj) => {
