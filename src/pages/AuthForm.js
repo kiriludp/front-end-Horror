@@ -33,8 +33,8 @@ export default function AuthForm(props) {
       })
         .then((data) => {
           console.log(data);
-          props.setUserId(data.user.id);
-          props.setUsername(data.user.username);
+          props.setUserId(data.id);
+          props.setUsername(data.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
           // document.querySelector(".logBtn").style="display: none;"
@@ -51,8 +51,8 @@ export default function AuthForm(props) {
       })
         .then((data) => {
           console.log(data);
-          props.setUserId(data.user.id);
-          props.setUsername(data.user.username);
+          props.setUserId(data.id);
+          props.setUsername(data.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
         })
