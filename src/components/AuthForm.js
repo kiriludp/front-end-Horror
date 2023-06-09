@@ -8,11 +8,11 @@ export default function AuthForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // email is an example of signup only field, not in use for this app
-  const [setEmail] = useState("");
+ /*  const [setEmail] = useState(""); */
 
   useEffect(() => {
     if (props.userId > 0) {
-      navigate(`/Profile/${props.username}`);
+      navigate(`/user/${props.username}`);
     }
   }, [props.userId]);
   const handleChange = (e) => {

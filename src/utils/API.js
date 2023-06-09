@@ -1,7 +1,7 @@
 //for local development
 // const URL_PREFIX = "http://localhost:3001";
 //deployed
-const URL_PREFIX = "http://localhost:3000";
+const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   login: (userObj) => {
