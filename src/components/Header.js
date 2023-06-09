@@ -1,6 +1,6 @@
 import React from 'react';
+import  '../styles/Header.css';
 
-import '../styles/Header.css'
 
 function Header() {
     const styles = {
@@ -9,6 +9,7 @@ function Header() {
         },
         h1:{
             fontSize: '100px'
+            
         }
     }
 

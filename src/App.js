@@ -1,53 +1,56 @@
 import {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-/* import "./styles/App.css"; */
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Homepage from './components/Homepage';
-import Profile from './components/Profile';
-import AuthForm from './components/AuthForm';
-import Start from './components/Start';
-import API from "./utils/API";
+import GameStart from './pages/GameStart';
+import GamePlay from './pages/GamePlay';
+import Homepage from './pages/Homepage';
+import Profile from './pages/Profile'
+import AuthForm from './pages/AuthForm';
+import API from './utils/API';
 
 
-export default function App() {
+
+function App() {
 
   const [userId, setUserId] = useState(-1);
-  const [email, setEmail] = useState("")
   const [username, setUsername] = useState("")
-  const [token, setToken] = useState("")
- 
-  useEffect(()=>{
-    const storedToken = localStorage.getItem("token");
-    API.verifyToken(storedToken).then(data=>{
-      setToken(storedToken);
-      setUserId(data.id);
-      setUsername(data.username);
-    }).catch(err=>{
-      console.log("oh noes")
-      console.log(err)
-     logout();
-    })
-  },[])
+  const [token, setToken] = useState(" ")
 
-  const logout = ()=>{
-    localStorage.removeItem("token")
-      setToken(null);
-      setUsername(null);
-      setUserId(0);
-  }
-  
+useEffect (() => {
+  const storedToken = localStorage.getItem("token");
+  API.verifyToken(storedToken).then(data=>{
+    setToken(storedToken);
+    setUserId(data.id);
+    setUsername(data.username);
+  }).catch(err =>{
+    console.log("this homie is not working")
+    console.log(err)
+    logout();
+
+  })
+}, [])
+
+const logout = ()=>{
+  localStorage.removeItem("token")
+    setToken(null);
+    setUsername(null);
+    setUserId(0);
+}
+
   return (
     <div className='Main'>
       <Router>
         <Header />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage userId={userId} token={token} />} />
-          <Route path="/Login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} />} />
-          <Route path="/Signup" element={<AuthForm usage="Signup" setUserId={setUserId} setEmail={setEmail} setUsername={setUsername} setToken={setToken} userId={userId} email={email} username={username} />} />
-          <Route path="/Start" element={<Start />} />
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/start" element={<GameStart />} />
+          <Route path="/game" element={<GamePlay />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
+          <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
+          
 
         </Routes>
       </Router>
@@ -55,3 +58,5 @@ export default function App() {
     </div>
   )
   }
+
+export default App;
