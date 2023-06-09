@@ -1,24 +1,15 @@
-.main {
-    display: flex, center;
-    margin-left: 40%;
-    margin-top: 50px;
-    width: 500px;
-    
+.testing {
+    display: flex;
+    padding: 20px 0 0 150px;
+    margin: 20px 0 0 25px;
 }
 
-.storyIntro h3{
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #420814 ;
-    
-}
+.text {
+    display: flex;
+    max-height: 200px;
+    max-width: 200px;
 
-.startBtn{
-    margin: 30px;
-    background-color: #420814 ;
-    color: #c1c6be;
 }
-
 
 
 
