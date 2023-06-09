@@ -44,12 +44,12 @@ const logout = ()=>{
         <Header />
         <Navbar userId={userId} username={username} logout={logout} />
         <Routes>
-          <Route path="/" element={<Homepage userId={userId} token={token} />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
           <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } /> 
           <Route path="/start" element={<GameStart />} />
           <Route path="/game" element={<GamePlay />} />
-          <Route path="/user/:username" element={<Profile userId={userId} token={token} />} />
+          <Route path="/user/:username" element={<Profile />} />
           
         </Routes>
       </Router>
