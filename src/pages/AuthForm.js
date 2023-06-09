@@ -8,7 +8,7 @@ export default function AuthForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // email is an example of signup only field, not in use for this app
-/*   const [email, setEmail] = useState(""); */
+
 
   useEffect(() => {
     if (props.userId > 0) {
@@ -18,9 +18,8 @@ export default function AuthForm(props) {
   const handleChange = (e) => {
     if (e.target.name === "username") {
       setUsername(e.target.value);
-      // email is an example of signup only field, not in use for this app
-    } else if (e.target.name === "email") {
-      /* setEmail(e.target.value); */
+      // email is an example of signup only field, not in use for this ap
+     
     } else {
       setPassword(e.target.value);
     }
@@ -46,14 +45,13 @@ export default function AuthForm(props) {
         });
     } else {
       API.signup({
-        /* email:email, */
+      
         username: username,
         password: password,
       })
         .then((data) => {
           console.log(data);
           props.setUserId(data.user.id);
-          /* props.setEmail(data.user.email); */
           props.setUsername(data.user.username);
           props.setToken(data.token);
           localStorage.setItem("token", data.token);
@@ -72,13 +70,6 @@ export default function AuthForm(props) {
         <div>
           <h1>{props.usage}</h1>
           <form onSubmit={handleSubmit}>
-         {/*  {props.usage==="Signup"&&
-          <input
-                name="email"
-                onChange={handleChange}
-                value={email}
-                placeholder="email"
-            />} */}
             <input
               name="username"
               onChange={handleChange}
