@@ -12,7 +12,7 @@ export default function AuthForm(props) {
 
   useEffect(() => {
     if (props.userId > 0) {
-      navigate(`/user/${props.username}`);
+      navigate(`/user/${props.id}`);
     }
   }, [props.userId]);
   const handleChange = (e) => {

@@ -2,7 +2,7 @@ const URL_PREFIX = "https://horrorgame.herokuapp.com";
 
 const API = {
   login: (userObj) => {
-    return fetch(`${URL_PREFIX}/api/users/login`, {
+    return fetch(`${URL_PREFIX}/api/login`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -17,7 +17,7 @@ const API = {
     });
   },
   signup: (userObj) => {
-    return fetch(`${URL_PREFIX}/api/users/signup`, {
+    return fetch(`${URL_PREFIX}/api/user/signup`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
@@ -32,7 +32,7 @@ const API = {
     });
   },
   verifyToken:(token)=>{
-    return fetch(`${URL_PREFIX}/verifytoken`,{
+    return fetch(`${URL_PREFIX}/api/user/profile`,{
         headers:{
             "authorization":`Bearer ${token}`
         }
