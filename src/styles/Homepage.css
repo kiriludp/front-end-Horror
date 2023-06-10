@@ -1,15 +1,16 @@
-.testing {
+
+
+.homepage-container {
     display: flex;
-    padding: 20px 0 0 150px;
-    margin: 20px 0 0 25px;
+    flex-flow: column nowrap;
+    
 }
+
+.testing {
+    margin: 35px;
+}
+
 
 .text {
-    display: flex;
-    max-height: 200px;
-    max-width: 200px;
-
+    margin: 0 0 0 150px;
 }
-
-
-

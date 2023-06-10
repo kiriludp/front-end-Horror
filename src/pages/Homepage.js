@@ -1,16 +1,16 @@
 import '../styles/Homepage.css'
-import Container from 'react-bootstrap/Container'
+
 
 export default function Homepage() {
 
     return (
-     <Container fluid className="home">
+     <div className="homepage-container">
         <div className="testing">
-            <h1>This is a test.</h1>
+            <h1>They're Coming to Get You...</h1>
         </div>
         <div className="text">
-        <p>What does this additional text look like </p>
+        <p></p>
         </div>
-     </Container>
+     </div>
     );
   }

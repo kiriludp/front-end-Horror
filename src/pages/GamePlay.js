@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import Structure from "../components/MainGame";
 import texts from "../utils/texts";
+import "../styles/GamePlay.css"
 
 
 
