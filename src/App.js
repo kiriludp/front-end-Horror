@@ -1,25 +1,62 @@
+import {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import GameStart from './pages/GameStart';
+import GamePlay from './pages/GamePlay';
+import Homepage from './pages/Homepage';
+import Profile from './pages/Profile'
+import AuthForm from './pages/AuthForm';
+import Footer from './components/Footer';
+import API from './utils/API';
 
-import './styles/App.css';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [userId, setUserId] = useState(-1);
+  const [username, setUsername] = useState("")
+  const [token, setToken] = useState(" ")
+
+useEffect (() => {
+  const storedToken = localStorage.getItem("token");
+  API.verifyToken(storedToken).then(data=>{
+    setToken(storedToken);
+    setUserId(data.id);
+    setUsername(data.username);
+  }).catch(err =>{
+    console.log("this homie is not working")
+    console.log(err)
+    logout();
+
+  })
+}, [])
+
+const logout = ()=>{
+  localStorage.removeItem("token")
+    setToken(null);
+    setUsername(null);
+    setUserId(0);
 }
+
+  return (
+    <div className='Main'>
+      <Router>
+        <Header />
+        <Navbar userId={userId} username={username} logout={logout} />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<AuthForm usage="Login" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } />
+          <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } /> 
+          <Route path="/start" element={<GameStart />} />
+          <Route path="/game" element={<GamePlay />} />
+          <Route path="/profile" element={<Profile />} />
+          </Routes>
+        <Footer />
+      </Router>
+      
+    </div>
+  )
+  }
 
 export default App;

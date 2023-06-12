@@ -1,0 +1,55 @@
+.homepage-container {
+    display: flex;
+    flex-flow: column;
+    color: #c1c6be
+    
+}
+
+.title {
+     padding: 25px;
+}
+
+.lead {
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+
+}
+
+.storySetup-textContainer {
+    display:flex;
+    justify-content: center;
+    margin-right: 75px;
+    font-family: 'Space Mono', monospace;
+ 
+}
+
+.dialogue-textContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.warning-textContainer {
+    display: flex;
+    justify-content: center;
+    margin-right: 75px;
+    font-family: 'Space Mono', monospace;
+}
+
+.jigsaw {
+    margin-left: 70%;
+  
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+
+.choice {
+    width: 50px;
+    height: 50px;
+    margin-left: 85%;
+    border-style: outset;
+    
+    
+}

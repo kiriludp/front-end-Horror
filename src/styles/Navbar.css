@@ -1,0 +1,22 @@
+.Navbar {
+    background-color: #020204;
+}
+
+.Menu {
+    background-color: #6d6161;
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+   
+}
+
+.logBtn, .outBtn, .signBtn {
+    background-color: #6d6161 ;
+
+}
+
+.link- {
+    color:#420814;
+}
