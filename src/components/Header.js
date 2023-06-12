@@ -18,7 +18,7 @@ function Header() {
 
 return (
     <header className='header' style={{backgroundImage: `url(${header})` , backgroundPosition: "center"}}>
-        <h1 style={styles.h1}>They're Comming to Get You</h1>
+        <h1 style={styles.h1}>They're Coming to Get You</h1>
     </header>
 );
 
