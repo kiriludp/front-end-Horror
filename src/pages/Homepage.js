@@ -2,6 +2,8 @@ import '../styles/Homepage.css';
 import { Link } from "react-router-dom";
 import carImage from '../styles/imgs/car.png'
 import campImage from '../styles/imgs/camp.png'
+import machete from "../styles/imgs/machete.png"
+import trees from "../styles/imgs/leafless-tree.png"
 
 
 export default function Homepage() {
@@ -9,11 +11,11 @@ export default function Homepage() {
     return (
         <div className="homepage-container">
             <div className="title">
-                <h1>They're Coming to Get You...</h1>
+                <h1> <img src={trees} className='lead'></img><img src={machete}className='lead'></img> <img src={trees} className='lead'></img> </h1>
             </div>
             <div className="mainText-textContainer">
             <p className="storySetup-textContainer">
-                 An abandoned road..
+                 An abandoned road...
                  <br></br>
                 …an idyllic Cabin far off the well traveled path…
                 <br></br>
@@ -63,11 +65,11 @@ export default function Homepage() {
 
                    </div>
 
-                   <Link className='Homepage-link' to='/game'>
-                    <img src={carImage}></img>
+                   <Link className='Homepage-link' to='/start'>
+                    <img src={carImage} className='choice'></img>
                 </Link>
-                <Link className='Homepage-link' to='/game'>
-                <img src={campImage}></img>
+                <Link className='Homepage-link' to='/start'>
+                <img src={campImage} className='choice'></img>
                 </Link>
 
                 

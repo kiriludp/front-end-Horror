@@ -49,7 +49,7 @@ const logout = ()=>{
           <Route path="/signup" element={<AuthForm usage="Signup" setUserId={setUserId} setUsername={setUsername} setToken={setToken} userId={userId} username={username} /> } /> 
           <Route path="/start" element={<GameStart />} />
           <Route path="/game" element={<GamePlay />} />
-          <Route path="/user/:id" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           
         </Routes>
       </Router>

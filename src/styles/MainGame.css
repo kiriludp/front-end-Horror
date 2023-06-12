@@ -7,15 +7,13 @@
 .main-text {
     margin: 3vw;
     padding: 3vw;
-    border-style: dashed;
-    color: #0b2228;
+    border-style: solid;
+    color: #c1c6be;
     font-weight: 600;
 }
 
 .main-buttons {
     display: flex;
-    border-style: double; 
-    border-color: blueviolet;
     justify-content: center;
    
     
