@@ -1,6 +1,9 @@
 
 .card{
     background-color: #6d6161;
+    border-style: inset;
+    border-color: black;
+    border-width: 3px;
 }
 
 
@@ -13,4 +16,6 @@
 #stats {
     color: antiquewhite;
 }
+
+
  
