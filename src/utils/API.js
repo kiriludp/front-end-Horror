@@ -44,6 +44,15 @@ const API = {
         }
       });
   },
+  getUserByName:(username)=>{
+    return fetch(`${URL_PREFIX}api/users/${username}`).then(res=>{
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("falied to fetch user " + username);
+      }
+    })
+  },
   
   };
   

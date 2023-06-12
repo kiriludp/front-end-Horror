@@ -1,12 +1,15 @@
 .header {
 
     overflow: hidden;
-    background-color: #c1c6be;
-    padding: 20px 10px;
+    color: #c1c6be;
+    background-color: #020204
+    
     
 }
 
 h1 {
 text-align: center;
-font-family: 'Press Start 2P'
+font-family: 'Press Start 2P', cursive;
+padding-top: 20px;
+
 }

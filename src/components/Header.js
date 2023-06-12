@@ -10,7 +10,7 @@ function Header() {
             
         },
         h1:{
-            fontSize: '100px'
+            fontSize: '50px'
             
         }
     }

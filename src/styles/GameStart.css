@@ -22,7 +22,7 @@ body {
 h3 {
     display: flex;
     padding: 2%;
-    border-style: dotted;
+    
     justify-content: center;
     color: #c1c6be
 }
@@ -51,5 +51,6 @@ h3 {
 .Homepage-link {
     color:#c1c6be ;
     text-shadow: #420814;
+    font-family: 'Press Start 2P', cursive;
     
 }
