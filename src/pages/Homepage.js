@@ -11,7 +11,7 @@ export default function Homepage() {
     return (
         <div className="homepage-container">
             <div className="title">
-                <h1> <img src={trees} className='lead'></img><img src={machete}className='lead'></img> <img src={trees} className='lead'></img> </h1>
+                <h1> <img src={trees} className='lead' alt="tree"></img><img src={machete}className='lead' alt="machete"></img> <img src={trees} className='lead' alt="tree"></img> </h1>
             </div>
             <div className="mainText-textContainer">
             <p className="storySetup-textContainer">
@@ -66,10 +66,10 @@ export default function Homepage() {
                    </div>
 
                    <Link className='Homepage-link' to='/start'>
-                    <img src={carImage} className='choice'></img>
+                    <img src={carImage} className='choice' alt="car icon"></img>
                 </Link>
                 <Link className='Homepage-link' to='/start'>
-                <img src={campImage} className='choice'></img>
+                <img src={campImage} className='choice' alt="tent icon"></img>
                 </Link>
 
                 

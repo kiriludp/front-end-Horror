@@ -7,6 +7,7 @@ import GamePlay from './pages/GamePlay';
 import Homepage from './pages/Homepage';
 import Profile from './pages/Profile'
 import AuthForm from './pages/AuthForm';
+import Footer from './components/Footer';
 import API from './utils/API';
 
 
@@ -50,8 +51,8 @@ const logout = ()=>{
           <Route path="/start" element={<GameStart />} />
           <Route path="/game" element={<GamePlay />} />
           <Route path="/profile" element={<Profile />} />
-          
-        </Routes>
+          </Routes>
+        <Footer />
       </Router>
       
     </div>
