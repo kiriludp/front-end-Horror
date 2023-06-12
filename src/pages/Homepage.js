@@ -63,10 +63,10 @@ export default function Homepage() {
 
                    </div>
 
-                   <Link className='Homepage-link' to='/game'>
+                   <Link className='Homepage-link' to='/start'>
                     <img src={carImage}></img>
                 </Link>
-                <Link className='Homepage-link' to='/game'>
+                <Link className='Homepage-link' to='/start'>
                 <img src={campImage}></img>
                 </Link>
 

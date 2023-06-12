@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/GameStart.css";
-import backgroundImg from '../styles/imgs/background-woods.jpg';
+import backgroundImg from '../styles/imgs/0-1.jpg';
 
 
 
@@ -9,7 +9,7 @@ import backgroundImg from '../styles/imgs/background-woods.jpg';
 
 export default function GameStart() {
     return (
-        <div className="start-container " style={{ backgroundImage:`url(${backgroundImg})` ,backgroundRepeat:"no-repeat", backgroundSize:"cover", backgroundPosition: "center", width:'100vw', height: '100vh'}} >
+        <div className="start-container " >
             <div className="storyIntro">
                 <h3>You find yourself in a tent in the middle of the woods...</h3>
                 <div className="storyTime">
