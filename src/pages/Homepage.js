@@ -9,11 +9,11 @@ export default function Homepage() {
     return (
         <div className="homepage-container">
             <div className="title">
-                <h1>They're Coming to Get You...</h1>
+                <h1></h1>
             </div>
             <div className="mainText-textContainer">
             <p className="storySetup-textContainer">
-                 An abandoned road..
+                 An abandoned road...
                  <br></br>
                 …an idyllic Cabin far off the well traveled path…
                 <br></br>

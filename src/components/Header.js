@@ -16,7 +16,7 @@ function Header() {
 
 return (
     <header className='header' style={styles.header}>
-        <h1 style={styles.h1}>Do you like scary movies?</h1>
+        <h1 style={styles.h1}>They're Comming to Get You</h1>
     </header>
 );
 
