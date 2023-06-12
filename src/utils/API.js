@@ -32,7 +32,7 @@ const API = {
     });
   },
   verifyToken:(token)=>{
-    return fetch(`${URL_PREFIX}verifytoken`,{
+    return fetch(`${URL_PREFIX}api/users/verifytoken`,{
         headers:{
             "authorization":`Bearer ${token}`
         }

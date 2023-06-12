@@ -1,8 +1,6 @@
 
-import {useState} from 'react';
-
-
 import React from 'react';
+import "../styles/MainGame.css"
 
 
 
@@ -16,8 +14,8 @@ export default function MainGame({
 }) {
 
 return (
-    <div>
-        <div className="text">
+    <div className="mainGame-container">
+        <div className="mainGame-text">
             <p className="main-text"> {text} </p>
         </div>
         <div className="main-options">
@@ -25,8 +23,10 @@ return (
         </div>
 
         <div className='main-buttons'>
+            
             <button
                 onClick={() => setOption(idOne)}
+                
                 className="main-btnOne"
             >
                 {btnOne}
@@ -37,6 +37,7 @@ return (
             >
                 {btnTwo}
             </button>
+            
         </div>
     </div>
 

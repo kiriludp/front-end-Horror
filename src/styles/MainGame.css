@@ -1,0 +1,32 @@
+.mainGame-text {
+    display: flex;
+    justify-content: center;
+    width: 30%vw;
+}
+
+.main-text {
+    margin: 3vw;
+    padding: 3vw;
+    border-style: dashed;
+    color: #0b2228;
+    font-weight: 600;
+}
+
+.main-buttons {
+    display: flex;
+    border-style: double; 
+    border-color: blueviolet;
+    justify-content: center;
+   
+    
+    
+}
+
+.main-btnOne , .main-btnTwo {
+    margin: 10px;
+    width: 500px;
+    padding: 1%;
+    background-color: #580814;
+    color: #c1c6be
+    
+}

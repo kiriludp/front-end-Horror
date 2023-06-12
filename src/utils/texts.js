@@ -1,17 +1,17 @@
 const texts = [
     {
         id: 1,
-        text: `This will be the beginning of the story `,
+        text:     `...You can't help but wonder how long your friend has been gone. How far from the tent they may have gone. If you should go look for them..`,
 
         options: [
             {
-                text: `Continue with the adventure `,
+                text: `You'll stay awake a little longer. Just to see. `,
                 nextText: 2,
             },
             {
-                text: `Nope.
+                text: `They're an adult. They can take care of themselves. 
                 `,
-                nextText: 1,
+                nextText: 24,
             },
         ],
     },
@@ -398,7 +398,7 @@ const texts = [
         ],
     },
     {
-        id: 22,
+        id: 23,
         text: `It is, in fact, a road! Wow! What are the odds!
 
         It's not the same road you came in on, but it seems well traveled enough. In fact, not that far a head of you is a car that may be broken down or abandoned.  There's a chance it just overheated and needed to cool off but the owners abandoned it. If that's the case, you can probably use it to get away.`,
@@ -411,6 +411,21 @@ const texts = [
         {
             text: `Killers in situations like this always move bizarely fast-- no way are you risking it. You'll chance it with the car. At the very least it's good shelter.`,
             nextText: 23,
+        },
+    ]
+    },
+    {
+        id: 24,
+        text: `Alright. So maybe you're not the one to go on a camping trip with. You're friend doesn't come back. And neither do you....`,
+        
+    options: [
+        {
+            text: `Try`,
+            nextText: 1,
+        },
+        {
+            text: `Again?`,
+            nextText: 1,
         },
     ]
     },

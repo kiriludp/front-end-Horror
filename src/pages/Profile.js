@@ -1,12 +1,11 @@
 
+export default function PlayerProfile() {
 
-export default function Profile() {
-    return (
-    <div>
-      <h1>Profile</h1>
-      
-     </div>
-     );
-     
-  }
-
+  return (
+   <div>
+      <div className="testing">
+          <h1>This is another test test.</h1>
+      </div>
+   </div>
+  );
+}

@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-/* import "../styles/GameStart.css" */
+import "../styles/GameStart.css";
+import backgroundImg from '../styles/imgs/background-woods.jpg';
+
+
+
 
 
 
 export default function GameStart() {
     return (
-        <div className="main">
+        <div className="start-container " style={{ backgroundImage:`url(${backgroundImg})` ,backgroundRepeat:"no-repeat", backgroundSize:"cover", backgroundPosition: "center", width:'100vw', height: '100vh'}} >
             <div className="storyIntro">
                 <h3>You find yourself in a tent in the middle of the woods...</h3>
                 <div className="storyTime">
@@ -21,7 +25,7 @@ export default function GameStart() {
             </div>
             <div className="start">
                 <Link className='Homepage-link' to='/game'>
-                    Begin your adventure...
+                    Let the chase begin...
                 </Link>
             </div>
 
