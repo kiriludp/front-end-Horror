@@ -83,13 +83,10 @@ Gradient Background Effect base code by <a href="https://manuel.pinto.dev"> Manu
 
 ## Team Contact Information
 
-[Killian L Podhajsky](https://github.com/kiriludp)
+[Killian L Podhajsky-- Front End](https://github.com/kiriludp)
 
-[Gabriel Anderson](https://github.com/ChickenChamp71)
+[Gabriel Anderson-- Back End](https://github.com/ChickenChamp71)
 
-[Natasha Malhan](https://github.com/natashamalhan)
-
-[Thalissa Valery](https://github.com/ThalVal)
 
 
 ## Links 
